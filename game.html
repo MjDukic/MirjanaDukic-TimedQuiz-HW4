@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+<!--body for questions/answers when starting quiz-->
+<body>
+    <!--what will be at the top, will show what question we are on, what the current score is, and title score-->
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <div id="progress">
+                <div class="progress-item">
+                    <p id="progressText" class="hud-prefix">
+                        Question
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
+                </div>
+            <div class="progress-item">
+                <p class="progress-prefix">
+                    Score
+                </p>
+                <h1 class="progress-main-text" id="score">
+                    0
+                </h1>
+            </div>     
+            </div>
+            <!--filler questions/answers regarding how quiz will intially look, then css-->
+            <div id="question">What is the answer</div>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice</p>
+            </div>
+            <div id="question">What is the answer</div>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="2">Choice</p>
+            </div>
+            <div id="question">What is the answer</div>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="3">Choice</p>
+            </div>
+            <div id="question">What is the answer</div>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="4">Choice</p>
+            </div>
+        </div>
+    </div>
+    <!--creating mulitple files to keep each portion organized-->
+    <script src="game.js"></script>
+</body>
+</html>

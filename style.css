@@ -31,7 +31,7 @@ h2 {
     margin: 0 auto;
     padding: 2rem;
 }
-
+/*helps the entire container be centered, main focus*/
 .flex-column {
     display:flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ h2 {
 .hidden {
     display: none;
 }
-
+/*works for both buttons, linear gradient is newish and cool*/
 .btn {
     font-size: 2.4rem;
     padding: 2rem 0;
@@ -65,4 +65,20 @@ h2 {
     background: linear-gradient(90deg, rgb(18, 93, 225) 0%, rgb(0, 102, 255) 100%);
     border-radius: 5px;
 }
+
+/*works for both buttons, cursor and transition may or may not be needed*/
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.2rem 1.2rem whitesmoke;
+    transition: transform 200ms;
+    transform: scale(1.03);
+}
+
+/*why needed*/
+.btn[disbaled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
 

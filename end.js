@@ -16,7 +16,6 @@ username.addEventListener('keyup', () => {
 saveHighScore = e => {
     e.preventDefault()
 
-
     const score = {
         score: mostRecentScore,
         name: username.value
@@ -26,11 +25,12 @@ saveHighScore = e => {
 
     highScores.sort((a,b) => {
         return b.score - a.score
-})
+    })
 
+
+//keeps the top five highest scores
 highScores.splice(5)
 
-localStorage.setItem('highScores',JSON.stringify(highScores))
-window.location.assign('/')
-
+localStorage.setItem('highScores', JSON.stringify(highScores))
+// window.location.assign('')
 }

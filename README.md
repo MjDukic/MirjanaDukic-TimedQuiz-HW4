@@ -22,6 +22,9 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
+## Notes
+Used guidance of youtube tutorial (https://www.youtube.com/watch?v=f4fB9Xg2JEY)
+
 ## Mock-Up
 
 The following animation demonstrates the application functionality:

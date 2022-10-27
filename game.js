@@ -61,7 +61,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('/end.html')
+        return window.location.assign('./end.html')
     }
 /*how to get the new question with it showing what question we are on out of the total # of questions*/
     questionCounter++

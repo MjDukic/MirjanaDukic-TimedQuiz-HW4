@@ -9,10 +9,12 @@ const MAX_HIGH_SCORES = 5
 
 finalScore.innerText = mostRecentScore
 
+//makes the user input a name 
 username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value
 })
 
+//gets the correct high score # and the correlated username
 saveHighScore = e => {
     e.preventDefault()
 

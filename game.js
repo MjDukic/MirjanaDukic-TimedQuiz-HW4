@@ -4,6 +4,7 @@ const progressText = document.querySelector('#progressText')
 const scoreText = document.querySelector('#score')
 const progressBarFull = document.querySelector('#progressBarFull')
 
+//let is new..
 let currentQuestion= {}
 let acceptingAnswers = true
 let score = 0

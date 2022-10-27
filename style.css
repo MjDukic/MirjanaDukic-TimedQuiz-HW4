@@ -74,11 +74,47 @@ h2 {
     transform: scale(1.03);
 }
 
-/*why needed*/
-.btn[disbaled]:hover {
+.btn[disabled]:hover {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
 }
 
+/* for end page/initials button */
+.end-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 17rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 17rem;
+    padding: 2rem;
+    font-size: 1.7rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem whitesmoke;
+}
+
+input::placeholder {
+    color: grey;
+}
+
+#username {
+    margin-bottom: 3rem;
+    width: 100%;
+    outline: none;
+}
+
+#end-text {
+    font-size: 1.7rem;
+    color: black;
+    text-align: center;
+}
+
+#saveScoreBtn {
+    border: none;
+}
 

@@ -4,7 +4,7 @@ var progressText = document.querySelector('#progressText')
 var scoreText = document.querySelector('#score')
 var progressBarFull = document.querySelector('#progressBarFull')
 
-//let is new(for value to change)
+//let is new..(used for value to be able to change)
 let currentQuestion= {}
 let acceptingAnswers = true
 let score = 0
@@ -46,14 +46,15 @@ let questions = [
     },
 ]
 
-/*when capitalized, its 'fixed'*/
-var SCORE_POINTS = 5
-var MAX_QUESTIONS = 4
+/*variables*/
+var scorePoints = 5
+var maxQuestions = 4
 var time = 25;
 var timeEl = document.getElementById("timer");
 var remainingTime = "";
 var timeID;
 
+/*beginning of game*/
 startGame = () => { 
     questionCounter = 0
     score = 0
@@ -64,28 +65,29 @@ startGame = () => {
     getNewQuestion()
 }
 
+/* timer for the game and when timer hits zero, goes to end game*/
 var startTime = function () {
     time--;
     timeEl.textContent = time;
-    if (
-        time <= 0
-    ) {
+    if ( time <= 0) {
         clearInterval(timeID)
+        //window.location.replace("./end.html");
+        window.location.href = "./end.html";
     }
 }
 
 /*shows the most recent score*/ 
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter > maxQuestions) {
         localStorage.setItem('mostRecentScore', score)
 
         return window.location.assign('./end.html')
     }
 /*how to get the new question with it showing what question we are on out of the total # of questions*/
     questionCounter++
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressText.innerText = `Question ${questionCounter} of ${maxQuestions}`
 /*calculates what quesiton we are on with what percentage we are at too */
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressBarFull.style.width = `${(questionCounter/maxQuestions) * 100}%`
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length)
 /*keeps track of what question we are currently on*/
@@ -117,7 +119,7 @@ choices.forEach(choice => {
        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
        if (classToApply === 'correct') {
-        incrementScore(SCORE_POINTS)
+        incrementScore(scorePoints)
        }
 
        selectedChoice.parentElement.classList.add(classToApply)

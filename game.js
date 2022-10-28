@@ -1,10 +1,10 @@
-const question = document.querySelector('#question')
-const choices = Array.from(document.querySelectorAll('.choice-text'))
-const progressText = document.querySelector('#progressText')
-const scoreText = document.querySelector('#score')
-const progressBarFull = document.querySelector('#progressBarFull')
+var question = document.querySelector('#question')
+var choices = Array.from(document.querySelectorAll('.choice-text'))
+var progressText = document.querySelector('#progressText')
+var scoreText = document.querySelector('#score')
+var progressBarFull = document.querySelector('#progressBarFull')
 
-//let is new..
+//let is new(for value to change)
 let currentQuestion= {}
 let acceptingAnswers = true
 let score = 0
@@ -47,14 +47,31 @@ let questions = [
 ]
 
 /*when capitalized, its 'fixed'*/
-const SCORE_POINTS = 5
-const MAX_QUESTIONS = 4
+var SCORE_POINTS = 5
+var MAX_QUESTIONS = 4
+var time = 25;
+var timeEl = document.getElementById("timer");
+var remainingTime = "";
+var timeID;
 
-startGame = () => {
+startGame = () => { 
     questionCounter = 0
     score = 0
     availableQuestions = [...questions]
+    remainingTime = time;
+    timeID = setInterval(startTime, 1000)
+    timeEl.textContent = time;
     getNewQuestion()
+}
+
+var startTime = function () {
+    time--;
+    timeEl.textContent = time;
+    if (
+        time <= 0
+    ) {
+        clearInterval(timeID)
+    }
 }
 
 /*shows the most recent score*/ 
